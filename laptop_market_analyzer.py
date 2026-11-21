@@ -1,21 +1,17 @@
-# Laptop Hardware Market Analyzer (console program)
-# Choose a few preferences, see matching laptop records, and save four charts.
-# Prices are the recorded dataset values in Price_INR (not current shop prices).
 
 import os
 import pandas as pd
 import matplotlib
-matplotlib.use("Agg")                       # save charts as files, no pop-up windows
+matplotlib.use("Agg")                     
 import matplotlib.pyplot as plt
 
-# 1. Settings: files, folders, limits and chart colours
 BASE_FOLDER = os.path.dirname(os.path.abspath(__file__))
 CSV_FILE = os.path.join(BASE_FOLDER, "cleaned_laptopData.csv")
 CHART_FOLDER = os.path.join(BASE_FOLDER, "charts")
 RESULT_FOLDER = os.path.join(BASE_FOLDER, "results")
-MAX_SHOW = 10                               # laptops listed / drawn in chart 1
+MAX_SHOW = 10                             
 RAM_CHOICES = [4, 8, 16, 32]
-BUDGET_BANDS = [                            # (label, lowest price, highest price)
+BUDGET_BANDS = [                          
     ("Under 30,000", 0, 29999.99),
     ("30,000 - 49,999", 30000, 49999.99),
     ("50,000 - 79,999", 50000, 79999.99),
